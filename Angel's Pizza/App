@@ -1,0 +1,105 @@
+import java.util.Scanner;
+
+public class App {
+
+    static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        
+    orderPizza();
+    }    
+
+    static void orderPizza() {
+    
+    System.out.println("Welcome to Angel's Pizza!");
+    System.out.println("Choose your order");
+
+    System.out.println("Enter letter A to order Creamy Spinach Dip Pizza!");
+    System.out.println("Enter letter B to Garlic Shrimp pizza!");
+    
+    System.out.print("Enter the letter of your choice: ");
+    char choice = scan.next().charAt(0);
+
+    String pizza = " ";
+    Double price = 0.00;
+
+    switch (choice) {
+        case 'A':
+            pizza = "Creamy Spinach Dip Pizza";
+            price = 515.00;
+            break;
+        
+        case 'B':
+            pizza = "Garlic Shrimp Pizza";
+            price = 505.00;
+            break;
+
+        default:
+        System.out.println("Please enter A or B only");
+            return;
+    }
+
+    System.out.println("Your order is: " + pizza);
+    System.out.println("Price: " + price);
+
+    System.out.println("Enter CASH if you want to pay with cash!");
+	System.out.println("Enter CREDIT if you want to use credit card!");
+
+    System.out.println("Enter your payment method: ");
+    String paymentMethod = scan.next();
+
+    switch (paymentMethod) {
+        case "CASH" :
+        System.out.println("Please prepare exact amount upon delivery");
+        break;
+        case "cash":
+        System.out.println("Please prepare exact amount upon delivery");
+        break;
+        case "Cash":
+        System.out.println("Please prepare exact amount upon delivery");
+        break;
+        
+        case "CREDIT":
+        System.out.print("Enter CREDIT card number:");
+        int cardNumber = scan.nextInt();
+        break;
+        
+    default:
+        System.out.println("Please dont make fun of me!");
+        return;
+    }
+
+    System.out.println("Do you have an Angel's Pizza Card?");
+    System.out.println("If yes, type TRUE");
+    System.out.println("If no, type FALSE");
+    Boolean apizzaCard = scan.nextBoolean();
+
+    if (apizzaCard == true) {
+    System.out.println("Congratulations! You have a free pizza!");
+    } else {
+        System.out.println("Yikes! Avail our Angel's Pizza Card to get a free pizza!");
+    }
+
+    System.out.println("Choose your preferred delivery method!");
+    System.out.println("Enter PICKUP if you prefer to pick up your order");
+    System.out.println("Enter DELIVER if you prefer your order to be delivered");
+    System.out.println("Which delivery method do you prefer? ");
+    String deliveryMethod = scan.next();
+
+    switch (deliveryMethod) {
+        case "PICKUP":
+            System.out.println("Thank you! We'll let you know once your order is ready for pick up");
+            break;
+        case "DELIVER":
+            System.out.println("Thank you! We'll let you know when your order will arrive");
+            break;
+        default:
+            System.out.println("Please enter PICKUP or DELIVER only");
+        return;
+    }
+    
+    System.out.println("Thank you for ordering!");
+
+    }
+    
+}
